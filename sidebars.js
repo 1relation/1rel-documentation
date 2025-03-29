@@ -7,8 +7,9 @@ const sidebars = {
       label: 'Getting started',
       collapsed: true,
       items: [
-        'getting-started/about',
-        'getting-started/what-is-a-site',
+        'getting-started/structure',
+        'getting-started/configuration',
+        'getting-started/documentation',
       ],
       link: {
         type: 'generated-index',
@@ -16,38 +17,47 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Site settings',
+      label: 'Sites',
       collapsed: true,
       items: [
-        'site-settings/site-settings-general',
-        'site-settings/site-settings-modules',
-        'site-settings/site-settings-groups',
-        'site-settings/site-settings-users',
-        'site-settings/site-settings-cronjobs',
-        'site-settings/site-settings-fields',
-        'site-settings/site-settings-marketplace',
-        'site-settings/site-settings-solutions',
-
+        'sites/general',
+        'sites/users',
+        'sites/groups',
+        'sites/organisations',
+        'sites/modules',
         {
           type: 'category',
-          label: 'Actional buttons',
+          label: 'Actional Buttons',
           collapsed: true,
           items: [
-            'site-settings/actionable-buttons/ab-main-components',
-            'site-settings/actionable-buttons/ab-items',
-            'site-settings/actionable-buttons/ab-visibility',
-            'site-settings/actionable-buttons/ab-actions',
-            'site-settings/actionable-buttons/ab-outcome',
+            'sites/actionalbuttons/introduction',
+            'sites/actionalbuttons/how-to-use',
+            {
+              type: 'category',
+              label: 'Components',
+              link: {
+                type: 'doc',
+                id: 'sites/actionalbuttons/components/components'
+              },
+              items: [
+                'sites/actionalbuttons/components/items',
+                'sites/actionalbuttons/components/visibility',
+                'sites/actionalbuttons/components/actions',
+                'sites/actionalbuttons/components/outcome'
+              ]
+            }
           ],
           link: {
             type: 'doc',
-            id: 'site-settings/actionable-buttons/ab-intro-to-ab',
+            id: 'sites/actionalbuttons/introduction',
           },
         },
+        'sites/marketplace',
+        'sites/automations',
+        'sites/solutions',
       ],
       link: {
-        type: 'doc',
-        id: 'site-settings/site-settings-introduction',
+        type: 'generated-index'
       },
     },
     {
@@ -55,68 +65,56 @@ const sidebars = {
       label: 'Modules',
       collapsed: true,
       items: [
+        'modules/general',
+        'modules/dynamic-values',
+        'modules/module-item-types',
+        'modules/customfields',
+        'modules/relations',
+        'modules/documents',
+        'modules/import',
+        'modules/powersearch',
+        'modules/tabs',
+        'modules/trash',
+        'modules/widgets',
         {
           type: 'category',
-          label: 'Settings',
-          link: {
-            type: 'generated-index',
-            title: 'Module Settings',
-            slug: 'modules/settings',
-          },
+          label: 'Forms',
+          collapsed: true,
           items: [
-            'Modules/Settings/settings-general',
-            'Modules/Settings/settings-dynamic-values',
-            'Modules/Settings/settings-module-item-types',
-            'Modules/Settings/settings-customfields',
-            'Modules/Settings/settings-relations',
-            'Modules/Settings/settings-documents',
-            'Modules/Settings/settings-import',
-            'Modules/Settings/settings-powersearch',
-            'Modules/Settings/settings-tabs',
-            'Modules/Settings/settings-trash',
-            'Modules/Settings/settings-widgets',
+            'modules/forms/forms-main-components',
+            'modules/forms/forms-items',
             {
               type: 'category',
-              label: 'Forms',
-              collapsed: true,
-              items: [
-                'Modules/Settings/Forms/forms-main-components',
-                'Modules/Settings/Forms/forms-Items',
-                {
-                  type: 'category',
-                  label: 'Pages',
-                  link: {
-                    type: 'doc',
-                    id: 'Modules/Settings/Forms/forms-pages',
-                  },
-                  items: [
-                    'Modules/Settings/Forms/forms-pages-fields',
-                    {
-                      type: 'category',
-                      label: 'Submit & Cancel',
-                      link: {
-                        type: 'doc',
-                        id: 'Modules/Settings/Forms/forms-pages-submit&cancel',
-                      },
-                      items: [
-                        'Modules/Settings/Forms/forms-pages-submit&cancel-triggers',
-                      ],
-                    },
-                    'Modules/Settings/Forms/forms-endflow',
-                  ],
-                },
-              ],
+              label: 'Pages',
               link: {
                 type: 'doc',
-                id: 'Modules/Settings/Forms/forms-introduction',
+                id: 'modules/forms/forms-pages',
               },
+              items: [
+                'modules/forms/forms-pages-fields',
+                {
+                  type: 'category',
+                  label: 'Submit & Cancel',
+                  link: {
+                    type: 'doc',
+                    id: 'modules/forms/forms-pages-submit-cancel',
+                  },
+                  items: [
+                    'modules/forms/forms-pages-submit-cancel-triggers',
+                  ],
+                },
+                'modules/forms/forms-endflow',
+              ],
             },
           ],
+          link: {
+            type: 'doc',
+            id: 'modules/forms/forms-introduction',
+          },
         },
       ],
       link: {
-        type: 'doc',
-        id: 'Modules/modules-Intro-to-modules',
+        type: 'generated-index'
       },
     },
     {
@@ -184,10 +182,26 @@ const sidebars = {
             },
           ],
         },
+        {
+          type: 'category',
+          label: 'Resource Planning',
+          items: [
+            'apps/resourceplanning/introduction',
+            'apps/resourceplanning/configuration'
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Price Group',
+          items: [
+            'apps/pricegroup/introduction',
+            'apps/pricegroup/configuration'
+          ]
+        }
       ],
       link: {
         type: 'doc',
-        id: 'apps/apps-intro-to-apps',
+        id: 'apps/intro-to-apps',
       },
     },
     {
@@ -196,7 +210,24 @@ const sidebars = {
       collapsed: true,
       items: [
         'JSON/json-query',
-        'JSON/json-actions',
+        {
+          type: 'category',
+          label: 'JSON Actions',
+          collapsed: true,
+          items: [
+            'JSON/actions-crud',
+            'JSON/actions-open-location',
+            'JSON/actions-send-email',
+            'JSON/actions-send-toast',
+            'JSON/actions-show-form',
+            'JSON/actions-show-relevant-forms',
+            'JSON/actions-webhook',
+          ],
+          link: {
+            type: 'doc',
+            id: 'JSON/json-actions',
+          },
+        },
         'JSON/json-relations',
       ],
       link: {
@@ -204,7 +235,18 @@ const sidebars = {
         id: 'JSON/json-intro-to-json',
       },
     },
-    
+    {
+      'type': 'category',
+      'label': 'Miscellaneous',
+      'collapsed': true,
+      items: [
+        'misc/languages',
+        'misc/replaceables',
+      ],
+      link: {
+        type: 'generated-index'
+      },
+    }
   ],
 };
 
