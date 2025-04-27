@@ -4,7 +4,7 @@
 The Microsoft 365 Sync App enables bidirectional synchronization of events between Microsoft Calendar and FlowAgent.
 
 ## Prerequisite
-Before individual users can synchronize their calendars, the Microsoft 365 Sync App must be installed by an administrator or user with necessary permissions. Refer to the [installation guide](/docs/site-settings/site-settings-marketplace) for detailed instructions.
+Before individual users can synchronize their calendars, the Microsoft 365 Sync App must be installed by an administrator or user with necessary permissions. Refer to the [installation guide](/docs/sites/marketplace) for detailed instructions.
 
 ## User Setup
 Follow the steps below to synchronize your Microsoft Calendar with FlowAgent:
@@ -25,7 +25,7 @@ In the **General** tab, click on **Connect to Microsoft**.
 Log into your Microsoft account and approve the connection to complete the integration.
 
 ## Integration with FlowAgent Apps
-Once the sync is set up, events can be displayed and managed in compatible FlowAgent apps, such as the [calendar app](/docs/apps/widgets/apps-calendar).
+Once the sync is set up, events can be displayed and managed in compatible FlowAgent apps, such as the [Calendar Widget](/docs/modules/widgets/calendar).
 
 ---
 
